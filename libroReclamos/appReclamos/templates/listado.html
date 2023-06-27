@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    {% if registros %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>rut</th>
+                    <th>nombre</th>
+                    <th>apellido</th>
+                    <th>fecha</th>
+                    <th>descripcion</th>
+                    <th>mensaje</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for registro in registros %}
+                <tr>
+                    <td>registro.rut</td>
+                    <td>registro.nombre</td>
+                    <td>registro.apellido</td>
+                    <td>registro.fecha</td>
+                    <td>registro.descripcion</td>
+                    <td>registro.mensaje</td>
+                </tr>
+                {% endfor %} 
+            </tbody>
+        </table>
+        {% else %}
+        <div class="alert alert-warning text-center">
+            No hay reservas en el sistema
+        </div>
+        {% endif %}
+</body>
+</html>
